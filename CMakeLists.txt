@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.14)
 project(MediaScanner)
 
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
@@ -25,7 +25,9 @@ FetchContent_Declare(httplib
 FetchContent_MakeAvailable(httplib)
 
 
-add_executable(media_scanner src/main.cpp)
+add_executable(media_scanner src/main.cpp
+ src/Scanner.cpp
+ src/ContentType.hpp)
 
  
 
