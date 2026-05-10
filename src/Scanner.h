@@ -23,13 +23,7 @@ struct ScanResult{
 class Scanner
 {
 public:
-    Scanner(){
-        _extensionToType = {
-            {".png", ContentType::images}, {".jpg", ContentType::images},
-            {".mp4", ContentType::video}, {".mkv", ContentType::video},
-            {".mp3", ContentType::audio}, {".wav", ContentType::audio}
-        };
-    }
+    Scanner();
 
     ScanResult scan(std::string_view path);
 private:
