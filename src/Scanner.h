@@ -4,15 +4,13 @@
 #include <vector>
 #include <string>
 #include <filesystem>
-#include <format>
 #include "ContentType.hpp"
-
+#include <algorithm>
 
 
 struct ScanInfo{
-    int filesScanned = 0;
-    int filesSkipped = 0;
-    int situableFiles = 0;
+    size_t filesScanned = 0;
+    size_t situableFiles = 0;
 };
 
 struct ScanResult{
@@ -33,7 +31,7 @@ public:
         };
     }
 
-    ScanResult scan(std::string_view path, size_t limitForCategory);
+    ScanResult scan(std::string_view path);
 private:
     std::unordered_map<std::string, ContentType> _extensionToType;
 };
